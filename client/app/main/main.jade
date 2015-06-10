@@ -2,24 +2,36 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container
-    h1 'Allo, 'Allo!
-    p.lead Kick-start your next web app with Angular Fullstack
-    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+    h1 License Compositor Demo!
+    p.lead Align up to three licenses at the same time
 
 .container
   .row
-    .col-lg-12
-      h1.page-header Features:
-      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='thing in awesomeThings')
-        li
-          a(href='#', tooltip='{{thing.info}}')
-            | {{thing.name}}
+    .col-xs-4
+      h1(ng-show="selectedLicense1") {{selectedLicense1}}
+      h1(ng-hide="selectedLicense1") Please, select the license!
+      select(ng-model="selectedLicense1").selector
+        option(value="CC-BY-4.0") Attribution 4.0 International (CC BY 4.0)
+        option(value="CC-BY-NC-SA-4.0") Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+        option(value="CC-BY-SA-4.0") Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    .col-xs-4
+      h1(ng-show="selectedLicense2") {{selectedLicense2}}
+      h1(ng-hide="selectedLicense2") Please, select the license!
+      select(ng-model="selectedLicense2").selector
+        option(value="CC-BY-4.0") Attribution 4.0 International (CC BY 4.0)
+        option(value="CC-BY-NC-SA-4.0") Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+        option(value="CC-BY-SA-4.0") Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    .col-xs-4
+      h1(ng-show="selectedLicense3") {{selectedLicense3}}
+      h1(ng-hide="selectedLicense3") Please, select the license!
+      select(ng-model="selectedLicense3").selector
+        option(value="CC-BY-4.0") Attribution 4.0 International (CC BY 4.0)
+        option(value="CC-BY-NC-SA-4.0") Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
+        option(value="CC-BY-SA-4.0") Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
 
 footer.footer
   .container
     p
-      | Angular Fullstack v2.0.13
+      | Build with Angular Fullstack v2.0.13
       = ' | '
-      a(href='https://twitter.com/tyhenkel') @tyhenkel
-      = ' | '
-      a(href='https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open') Issues
+      a(href='https://github.com/earthquakesan') by Ivan Ermilov
