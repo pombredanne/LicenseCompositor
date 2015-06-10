@@ -31,5 +31,23 @@
 
 .selector {
   width: 200px;
+}
 
+.permissions {
+  background-color: #CDFFB4;
+}
+
+.requirements {
+  background-color: #CCC;
+}
+
+.prohibitions {
+  background-color: #FFBBBB;
+}
+
+.permission,
+.requirement,
+.prohibition {
+  margin: 5px;
+  font-size: medium;
 }

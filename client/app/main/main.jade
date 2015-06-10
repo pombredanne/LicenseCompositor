@@ -7,27 +7,63 @@ header#banner.hero-unit
 
 .container
   .row
+    .well After you select the licenses for your use case, we will be able to give recommendation for the license for your dataset.
+
+.container
+  .row
     .col-xs-4
-      h1(ng-show="selectedLicense1") {{selectedLicense1}}
-      h1(ng-hide="selectedLicense1") Please, select the license!
-      select(ng-model="selectedLicense1").selector
+      h1(ng-show="licenses[0]['selectedLicense']") {{licenses[0]['selectedLicense']}}
+      h1(ng-hide="licenses[0]['selectedLicense']") Please, select the license!
+      select(ng-model="licenses[0]['selectedLicense']").selector
         option(value="CC-BY-4.0") Attribution 4.0 International (CC BY 4.0)
         option(value="CC-BY-NC-SA-4.0") Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
         option(value="CC-BY-SA-4.0") Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+      .permissions
+        .permission(ng-repeat="(key, value) in licenses[0]['permissions']")
+          {{value['permission']['value']}}
+      .requirements
+        .requirement(ng-repeat="(key, value) in licenses[0]['requirements']")
+          {{value['requirement']['value']}}
+      .prohibitions
+        .prohibition(ng-repeat="(key, value) in licenses[0]['prohibitions']")
+          {{value['prohibition']['value']}}
     .col-xs-4
-      h1(ng-show="selectedLicense2") {{selectedLicense2}}
-      h1(ng-hide="selectedLicense2") Please, select the license!
-      select(ng-model="selectedLicense2").selector
+      h1(ng-show="licenses[1]['selectedLicense']") {{licenses[1]['selectedLicense']}}
+      h1(ng-hide="licenses[1]['selectedLicense']") Please, select the license!
+      select(ng-model="licenses[1]['selectedLicense']").selector
         option(value="CC-BY-4.0") Attribution 4.0 International (CC BY 4.0)
         option(value="CC-BY-NC-SA-4.0") Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
         option(value="CC-BY-SA-4.0") Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+      .permissions
+        .permission(ng-repeat="(key, value) in licenses[1]['permissions']")
+          {{value['permission']['value']}}
+      .requirements
+        .requirement(ng-repeat="(key, value) in licenses[1]['requirements']")
+          {{value['requirement']['value']}}
+      .prohibitions
+        .prohibition(ng-repeat="(key, value) in licenses[1]['prohibitions']")
+          {{value['prohibition']['value']}}
     .col-xs-4
-      h1(ng-show="selectedLicense3") {{selectedLicense3}}
-      h1(ng-hide="selectedLicense3") Please, select the license!
-      select(ng-model="selectedLicense3").selector
+      h1(ng-show="licenses[2]['selectedLicense']") {{licenses[2]['selectedLicense']}}
+      h1(ng-hide="licenses[2]['selectedLicense']") Please, select the license!
+      select(ng-model="licenses[2]['selectedLicense']").selector
         option(value="CC-BY-4.0") Attribution 4.0 International (CC BY 4.0)
         option(value="CC-BY-NC-SA-4.0") Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
         option(value="CC-BY-SA-4.0") Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+      .permissions
+        .permission(ng-repeat="(key, value) in licenses[2]['permissions']")
+          {{value['permission']['value']}}
+      .requirements
+        .requirement(ng-repeat="(key, value) in licenses[2]['requirements']")
+          {{value['requirement']['value']}}
+      .prohibitions
+        .prohibition(ng-repeat="(key, value) in licenses[2]['prohibitions']")
+          {{value['prohibition']['value']}}
+
+.container
+  .row
+    .well These three licenses are not compatible. However you can use first two datasets and license your dataset with: CC-BY-NC-SA-4.0. Attribution for both licensors are required, notices should be kept.
+
 
 footer.footer
   .container
